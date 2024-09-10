@@ -1,10 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Exercise Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cdbootstrap/css/cdb.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/8eedc68627.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cdbootstrap/js/cdb.min.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-$END$
+<header>
+    <!--BEGIN NAVIGATION-->
+    <nav class="navbar navbar-expand navbar-light bg-light d-none d-sm-flex">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Workout</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav  ms-auto mb-2 mb-0">
+                    <li class="nav-item btn btn-rounded btn-secondary">
+                        <a class="nav-link text-white" href="workouts.html">Begin Workout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="workouts.html">Create Workout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Exercises</a>
+                    </li>
+<!--                    <li class="nav-item">
+                        <a class="nav-link" href="#">Community</a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <nav class="d-sm-none fixed-bottom bg-light py-2">
+        <div class="container d-flex justify-content-around">
+            <button class="btn btn-secondary btn-sm text-center rounded-circle p-3">
+                <i class="fas fa-play"></i>
+            </button>
+            <button class="btn btn-outline-secondary btn-sm text-center rounded-circle p-3">
+                <i class="fas fa-plus"></i>
+            </button>
+            <button class="btn btn-outline-secondary btn-sm text-center rounded-circle p-3">
+                <i class="fas fa-history"></i>
+            </button>
+            <button class="btn btn-outline-secondary btn-sm text-center rounded-circle p-3">
+                <i class="fas fa-dumbbell"></i>
+            </button>
+<!--           <button class="btn btn-outline-secondary btn-sm text-center rounded-circle p-3">
+                <i class="fas fa-users"></i>
+            </button>-->
+        </div>
+    </nav>
+    <!--END NAVIGATION-->
+</header>
+
+<main>
+    <div class="container py-2">
+        <div class="row">
+            <!--BEGIN STREAK CARD-->
+            <div class="col-12 col-lg-6 d-flex align-items-center">
+                <div class="card mb-3 w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-bolt fa-5x text-danger mt-2 mt-md-0"></i>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">You're on a streak!</h5>
+                                <p class="card-text">You've tracked a workout for the 3 days straight.<br>Keep it up!</p>
+                                <a href="" class="btn btn-secondary btn-rounded">Begin Workout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--END STREAK CARD-->
+
+            <!--BEGIN BARCHART-->
+            <div class="col-12 col-lg-6">
+                <!--derived from https://www.devwares.com/blog/create-bootstrap-charts-using-bootstrap5/-->
+                <div class="card chart-container m-auto">
+                    <canvas id="chart"></canvas>
+                </div>
+            </div>
+            <!--END BARCHART-->
+        </div>
+
+        <!--BEGIN PERSONAL RECORDS-->
+        <div class="row bg-body-secondary rounded my-2">
+                <div class="col-12 my-2 py-2 d-flex justify-content-between align-items-center">
+                    <h2>Personal Records</h2>
+                    <a href="" class="btn btn-secondary btn-rounded">View History</a>
+                </div>
+                <div class="row row-cols-1 row-cols-md-3 my-2 g-4">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Incline Bench Press</h5>
+                                <h6 class="card-subtitle">Max Weight</h6>
+                                <p class="card-text text-end">180lbs
+                                    <br><span class="text-body-secondary">Set on 9/2/2024</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Dumbbell Curls</h5>
+                                <h6 class="card-subtitle">Max Volume</h6>
+                                <p class="card-text text-end">300lbs (30lbs x 10 reps)
+                                    <br><span class="text-body-secondary">Set on 9/2/2024</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Push Ups</h5>
+                                <h6 class="card-subtitle">Most Reps (1 set)</h6>
+                                <p class="card-text text-end">15 reps
+                                    <br><span class="text-body-secondary">Set on 9/2/2024</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!--END PERSONAL RECORDS-->
+    </div>
+</main>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+<script src="chartScript.js"></script>
 </body>
 </html>
