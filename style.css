@@ -4,3 +4,20 @@ nav button {
     align-items: center;
     width: 18%;
 }
+input.form-control {
+    text-align: end;
+    width: 100%;
+    box-sizing: border-box;
+}
+.modal-body input{
+    text-align: end;
+}
+
+
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 1000px;
+        margin: 1.75rem auto;
+    }
+}
