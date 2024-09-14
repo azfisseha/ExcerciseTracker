@@ -1,3 +1,31 @@
+/*Removing the ^v arrows from the accordion buttons, and the subsequent space occupied by them.
+source: https://forum.bootstrapstudio.io/t/removing-up-down-default-arrows-on-accordion-items/8815/4 */
+.accordion-button::after {
+    background-image: initial;
+    width: 0;
+    box-shadow: none;
+}
+.accordion-button:not(.collapsed)::after {
+    background-image: initial;
+    width: 0;
+}
+
+/*Removing white outlines and blue highlighting from accordion buttons
+Adding the ellipses button into the accordion headers makes these look out of place, as bootstrap only highlights the
+button and not the full header area.  I chose to remove this from all accordions rather than just the ones that have the
+ellipses, to keep things consistent.*/
+.accordion-button:not(.collapsed){
+    box-shadow: none;
+    border: none;
+}
+.accordion-button:not(.collapsed){
+    box-shadow: none;
+    border: none;
+}
+.accordion-button:focus{
+    box-shadow: none;
+}
+
 nav button {
     display: flex;
     flex-direction: column;
@@ -19,5 +47,12 @@ input.form-control {
     .modal-dialog {
         max-width: 1000px;
         margin: 1.75rem auto;
+    }
+}
+
+@media (max-width: 576px) {
+    /*Moving nav butttons to the bottom causes content to hide behind the nav area, padding to correct this.*/
+    body {
+        padding-bottom: 15%;
     }
 }

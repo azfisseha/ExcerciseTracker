@@ -20,6 +20,13 @@ const myChart = new Chart(ctx, {
                     beginAtZero: true,
                 }
             }]
+        },
+        /*Chartjs by default allows user to click on the label of a dataset in the legend to hide it from view.
+        This is entirely not helpful for my purposes, so I'm disabling this function.
+        https://stackoverflow.com/questions/38583894/how-to-disable-chartjs-legendclick
+        */
+        legend: {
+            onClick: (e) => e.stopPropagation()
         }
     },
 });
