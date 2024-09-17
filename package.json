@@ -1,0 +1,24 @@
+{
+  "name": "exercisetracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "sass scss/style.scss css/app.min.css --watch --style=compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azfisseha/ExcerciseTracker.git"
+  },
+  "author": "Adam Fisseha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azfisseha/ExcerciseTracker/issues"
+  },
+  "homepage": "https://github.com/azfisseha/ExcerciseTracker#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.78.0"
+  }
+}

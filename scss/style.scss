@@ -1,3 +1,6 @@
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 /*Removing the ^v arrows from the accordion buttons, and the subsequent space occupied by them.
 source: https://forum.bootstrapstudio.io/t/removing-up-down-default-arrows-on-accordion-items/8815/4 */
 .accordion-button::after {
