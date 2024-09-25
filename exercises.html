@@ -59,58 +59,22 @@
 </header>
 <main id="app">
     <div class="container pt-5 pb-2">
-        <div class="d-flex justify-content-between align-items-center">
-            <h2 class="ms-lg-5">{{currentWorkout.name}}</h2>
-            <button class="btn btn-outline-danger btn-sm me-lg-5">
-                <i class="fas fa-trash"></i>
-            </button>
-        </div>
-        <!--BEGIN WORKOUT ACCORDION-->
-        <div class="accordion accordion-flush" id="workoutAccordion">
-            <!--BEGIN EXERCISE ITEM-->
-            <div class="accordion-item" v-for="(exercise, exIndex) in currentWorkout.exercises">
-                <h2 class="accordion-header" :id="'exercise' + exIndex + 'Heading'">
-                    <div class="d-flex justify-content-between align-items-center bg-primary p-1">
-                        <button class="accordion-button bg-primary text-white me-2" type="button" data-bs-toggle="collapse"
-                                :data-bs-target="'exercise' + exIndex" aria-expanded="true" :aria-controls="'exercise' + exIndex">
-                            {{exercise.name}}
-                        </button>
-                        <a href="" class="btn btn-outline-light btn-sm">
-                            <i class="fas fa-ellipsis-v"></i>
-                        </a>
-                    </div>
-                </h2>
-                <div :id="'exercise' + exIndex" class="accordion-collapse collapse show" :aria-labelledby="'exercise' + exIndex + 'Heading'"
-                     data-bs-parent="#workoutAccordion">
-                    <div class="accordion-body">
-                        <!--BEGIN SET ITEM-->
-                        <div class="d-flex flex-direction-row justify-content-between" v-for="(set, setIndex) in exercise.sets">
-                            <div>
-                                <label :for="'repsInputE' + exIndex + 'S' + setIndex" class="form-label">Reps</label>
-                                <input type="number" class="form-control" :id="'repsInputE' + exIndex + 'S' + setIndex" placeholder="10" v-model="set.reps">
-                            </div>
-                            <div>
-                                <label :for="'weightInputE' + exIndex + 'S' + setIndex" class="form-label">Weight</label>
-                                <input type="number" class="form-control" :id="'weightInputE' + exIndex + 'S' + setIndex" placeholder="60" v-model="set.weight">
-                            </div>
-                            <div class="d-flex align-items-end">
-<!--                                TODO: enable button and add active styling when workout starts-->
-<!--                                <button class="btn btn-success"><i class="fas fa-check"></i></button>-->
-                                <button class="btn btn-danger" @click="deleteSet(set, exercise)"><i class="fas fa-minus"></i></button>
-                            </div>
-                        </div>
-                        <!--END SET ITEM-->
-                        <div class="w-100 d-flex justify-content-center">
-                            <button class="btn btn-primary">
-                                Add Set
-                            </button>
+        <h2 class="my-3">Exercises</h2>
+        <div class="row bg-body-secondary rounded my-2">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 my-2 mx-auto g-4">
+                <!--BEGIN EXERCISE CARD-->
+                <div class="col" v-for="item in savedExercises">
+                    <div class="card">
+                        <div class="card-body row">
+                                <h5 class="card-title col-12">{{item.name}}</h5>
+                                <p class="card-text col-6">Type:<br>{{item.type}}</p>
+                                <p class="card-text col-6">Muscle Group:<br>{{item.muscle}}</p>
                         </div>
                     </div>
                 </div>
+                <!--END EXERCISE CARD-->
             </div>
-            <!--END EXERCISE ITEM-->
         </div>
-        <!--END WORKOUT ACCORDION-->
     </div>
 </main>
 

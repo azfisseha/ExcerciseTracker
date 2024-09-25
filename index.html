@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>Exercise Tracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cdbootstrap/css/cdb.min.css"/>
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cdbootstrap/css/cdb.min.css"/>-->
     <script src="https://kit.fontawesome.com/8eedc68627.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/cdbootstrap/js/cdb.min.js"></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/cdbootstrap/js/cdb.min.js"></script>-->
     <link href="css/app.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -17,17 +17,17 @@
             <a class="navbar-brand" href="index.html">Workout</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav  ms-auto mb-2 mb-0">
-                    <li class="nav-item btn btn-rounded btn-secondary">
-                        <a class="nav-link text-white" href="workout_collection.html">Begin Workout</a>
+                    <li class="nav-item">
+                        <a class="btn btn-rounded btn-primary" href="workout_collection.html">Start A Workout</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="workout_collection.html">Create Workout</a>
+                        <a class="nav-link" href="workout_collection.html">Workouts</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">History</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Exercises</a>
+                        <a class="nav-link" href="exercises.html">Exercises</a>
                     </li>
 <!--                    <li class="nav-item">
                         <a class="nav-link" href="#">Community</a>
@@ -38,19 +38,19 @@
     </nav>
     <nav class="d-sm-none fixed-bottom bg-light py-2">
         <div class="container d-flex justify-content-around">
-            <button class="btn btn-secondary btn-sm text-center rounded-circle p-3">
+            <button class="btn btn-primary btn-sm text-center rounded-circle p-3">
                 <i class="fas fa-play"></i>
             </button>
-            <button class="btn btn-outline-secondary btn-sm text-center rounded-circle p-3">
+            <button class="btn btn-outline-primary btn-sm text-center rounded-circle p-3">
                 <i class="fas fa-plus"></i>
             </button>
-            <button class="btn btn-outline-secondary btn-sm text-center rounded-circle p-3">
+            <button class="btn btn-outline-primary btn-sm text-center rounded-circle p-3">
                 <i class="fas fa-history"></i>
             </button>
-            <button class="btn btn-outline-secondary btn-sm text-center rounded-circle p-3">
+            <button class="btn btn-outline-primary btn-sm text-center rounded-circle p-3">
                 <i class="fas fa-dumbbell"></i>
             </button>
-<!--           <button class="btn btn-outline-secondary btn-sm text-center rounded-circle p-3">
+<!--           <button class="btn btn-outline-primary btn-sm text-center rounded-circle p-3">
                 <i class="fas fa-users"></i>
             </button>-->
         </div>
@@ -58,13 +58,13 @@
     <!--END NAVIGATION-->
 </header>
 
-<main>
+<main id="app">
     <div class="container pt-5 pb-2">
-        <div class="row">
+        <div class="row mb-4 gap-4 gap-lg-0">
             <!--BEGIN STREAK CARD-->
             <div class="col-12 col-lg-6 d-flex align-items-center">
-                <div class="card mb-3 w-100">
-                    <div class="row g-0">
+                <div class="card w-100 border-primary border-1 h-100">
+                    <div class="row my-auto g-0">
                         <div class="col-md-4 d-flex align-items-center justify-content-center">
                             <i class="fas fa-bolt fa-5x text-danger mt-2 mt-md-0"></i>
                         </div>
@@ -72,7 +72,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">You're on a streak!</h5>
                                 <p class="card-text">You've tracked a workout for the 3 days straight.<br>Keep it up!</p>
-                                <a href="" class="btn btn-secondary btn-rounded">Begin Workout</a>
+                                <a href="" class="btn btn-primary btn-rounded">Begin Workout</a>
                             </div>
                         </div>
                     </div>
@@ -87,6 +87,9 @@
                     <canvas id="chart"></canvas>
                 </div>
             </div>
+<!--            <template>-->
+<!--                <Bar :data="data" :options="options" />-->
+<!--            </template>-->
             <!--END BARCHART-->
         </div>
 
@@ -94,7 +97,7 @@
         <div class="row bg-body-secondary rounded my-2">
                 <div class="col-12 my-2 py-2 d-flex justify-content-between align-items-center">
                     <h2>Personal Records</h2>
-                    <a href="" class="btn btn-secondary btn-rounded">View History</a>
+                    <a href="" class="btn btn-primary btn-rounded">View History</a>
                 </div>
                 <div class="row row-cols-1 row-cols-md-3 my-2 mx-auto g-4">
                     <div class="col">
@@ -142,6 +145,15 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-<script src="chartScript.js"></script>
+<script type="module" src="js/chartJS.js"></script>
+
+<!-- Vue Application -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="js/app.js"></script>
+<script>
+    // start the app after all the other JS has been loaded
+    app.mount('#app');
+</script>
+
 </body>
 </html>

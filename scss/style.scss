@@ -1,5 +1,31 @@
+$primary-100:#2E8B57;
+$primary-200:#61bc84;
+$primary-300:#c6ffe6;
+$accent-100:#8FBC8F;
+$accent-200:#345e37;
+$text-100:#FFFFFF;
+$text-200:#e0e0e0;
+$bg-100:#1E1E1E;
+$bg-200:#2d2d2d;
+$bg-300:#454545;
+/*Color pallete source: aicolors.co */
+
+$primary: $primary-100;
+$secondary: $accent-100;
+$body-secondary-bg: $bg-300;
+$body-bg: $bg-100;
+$light: $primary-300;
+$body-color: $text-100;
+$body-secondary-color: $accent-100;
+
+//$link-color: $text-200;
+$btn-color: $text-200;
+$nav-link-color: $bg-100;
+//$body-emphasis-color: $text-200;
+//$btn-link-color: $text-200;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+//@import "../node_modules/cdbootstrap/css/cdb";
 
 /*Removing the ^v arrows from the accordion buttons, and the subsequent space occupied by them.
 source: https://forum.bootstrapstudio.io/t/removing-up-down-default-arrows-on-accordion-items/8815/4 */
