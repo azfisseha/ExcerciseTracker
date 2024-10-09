@@ -132,24 +132,140 @@ const app = Vue.createApp({
                 {
                     name: 'Pull',
                     lastCompletionDate: '9/3',
-                    exercises: []
+                    exercises: [
+                        {
+                            name: 'Lat Pulldowns',
+                            type: 'Barbell',
+                            muscle: 'Chest',
+                            sets: [
+                                {
+                                    reps: 10,
+                                    weight: 180,
+                                    complete: true
+                                },
+                                {
+                                    reps: 10,
+                                    weight: 180,
+                                    complete: false
+                                },
+                                {
+                                    reps: 0,
+                                    weight: 180,
+                                    complete: false
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Bicep Curls',
+                            type: 'Dumbbell',
+                            muscle: 'Shoulder',
+                            sets: [
+                                {
+                                    reps: 15,
+                                    weight: 30,
+                                    complete: true
+                                },
+                                {
+                                    reps: 12,
+                                    weight: 30,
+                                    complete: false
+                                },
+                                {
+                                    reps: 0,
+                                    weight: 30,
+                                    complete: false
+                                }
+                            ]
+                        },
+                    ]
                 },
                 {
                     name: 'Legs',
                     lastCompletionDate: '9/4',
-                    exercises: []
+                    exercises: [
+                        {
+                            name: 'Leg Extensions',
+                            type: 'Barbell',
+                            muscle: 'Chest',
+                            sets: [
+                                {
+                                    reps: 10,
+                                    weight: 180,
+                                    complete: true
+                                },
+                                {
+                                    reps: 10,
+                                    weight: 180,
+                                    complete: false
+                                },
+                                {
+                                    reps: 0,
+                                    weight: 180,
+                                    complete: false
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Leg Curls',
+                            type: 'Dumbbell',
+                            muscle: 'Shoulder',
+                            sets: [
+                                {
+                                    reps: 15,
+                                    weight: 30,
+                                    complete: true
+                                },
+                                {
+                                    reps: 12,
+                                    weight: 30,
+                                    complete: false
+                                },
+                                {
+                                    reps: 0,
+                                    weight: 30,
+                                    complete: false
+                                }
+                            ]
+                        },
+                        {
+                            name: 'Leg Press',
+                            type: 'Bodyweight',
+                            muscle: 'Chest',
+                            sets: [
+                                {
+                                    reps: 10,
+                                    complete: true
+                                },
+                                {
+                                    reps: 10,
+                                    complete: false
+                                },
+                                {
+                                    reps: 0,
+                                    complete: false
+                                }
+                            ]
+                        }
+                    ]
                 }
             ],
         }
     },
     methods: {
         openWorkout(name){
+            console.log(name);
             this.currentWorkout = this.savedWorkouts.find(workout => workout.name = name);
+            console.log(this.currentWorkout);
         },
         deleteSet(set, exercise){
             const exIndex = this.currentWorkout.exercises.indexOf(exercise);
             const ex = this.currentWorkout.exercises[exIndex];
             ex.sets.splice(ex.sets.indexOf(set), 1);
+        },
+        deleteWorkout(workout){
+            console.log(workout, this.savedWorkouts.indexOf(workout), this.savedWorkouts);
+            this.savedWorkouts.splice(this.savedWorkouts.indexOf(workout), 1);
+            //window.location.href = 'workout_collection.html';
         }
     },
     mounted: function () {
